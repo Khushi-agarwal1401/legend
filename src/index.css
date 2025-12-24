@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Original Login Styles Ported */
+:root {
+    --bg-color: #e5e5e5;
+    --white: #fff;
+    --grey: #eaedf0;
+    --accent: #2b3947;
+    --text: #727c94;
+    --icon: #838ea3;
+}
+
+body {
+    background-color: var(--grey);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.centered-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, 
+           rgb(0,0,0), rgb(20,0,40)); /* Match chaos theme or keep original? Keeping closer to original for login */
+    background: var(--grey);
+}
+
+.form-container {
+    background-color: var(--grey);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #bebebe,
+        -10px -10px 20px #ffffff;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    font-size: 50px;
+    color: var(--icon);
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--grey);
+    box-shadow: 5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.msg {
+    font-size: 14px;
+    margin-bottom: 15px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.field {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.field input {
+    width: 100%;
+    padding: 15px 45px 15px 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: var(--grey);
+    box-shadow: inset 5px 5px 10px #bebebe,
+        inset -5px -5px 10px #ffffff;
+    color: var(--text);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.field input::placeholder {
+    color: #aab2c0;
+}
+
+.field span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--icon);
+}
+
+.action {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.action label {
+    cursor: pointer;
+    gap: 5px;
+}
+
+.action a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.action a:hover {
+    color: var(--accent);
+}
+
+.btn-container {
+    width: 100%;
+    height: 60px; /* Space for moving button */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-btn {
+    width: 120px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: var(--grey);
+    box-shadow: 5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff;
+    color: var(--accent);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* absolute positioning for the 'run away' effect */
+    position: absolute; 
+}
+
+#login-btn:hover {
+    color: var(--grey);
+    background: var(--accent);
+    box-shadow: inset 3px 3px 6px #1a222b,
+        inset -3px -3px 6px #3c4f63;
+}
+
+#login-btn:active {
+    transform: scale(0.95);
+}
+
+#login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Shift Classes */
+.shift-left {
+    transform: translateX(-80px);
+}
+.shift-right {
+    transform: translateX(80px);
+}
+.shift-top {
+    transform: translateY(-40px);
+}
+.shift-bottom {
+    transform: translateY(40px);
+}
+
+/* When valid, disable shifts */
+.no-shift {
+    transform: translate(0, 0) !important;
+}
+
+.signup {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.signup a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+}
